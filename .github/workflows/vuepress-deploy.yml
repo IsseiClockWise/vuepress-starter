@@ -17,10 +17,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
-      run: npm install  # このステップで依存関係をインストールする
+      run: rm -rf node_modules && npm install  # このステップで依存関係をインストールする
 
     - name: Build VuePress site
-      run: npm run build  # ビルドスクリプトを実行する
+      run: rm -rf node_modules/.cache && npm run build  # ビルドスクリプトを実行する
 
     - name: vuepress-deploy
       uses: jenkey2011/vuepress-deploy@master
