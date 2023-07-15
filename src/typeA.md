@@ -1,3 +1,3 @@
 # type AA
 
-![An image](/hero.png)
+![An image](./hero.png)
