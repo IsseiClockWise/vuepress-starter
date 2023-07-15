@@ -25,7 +25,7 @@ jobs:
     - name: vuepress-deploy
       uses: jenkey2011/vuepress-deploy@master
       env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        ACCESS_TOKEN: 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
         TARGET_REPO: IsseiClockWise/vuepress-starter
         TARGET_BRANCH: main
         BUILD_DIR: src/.vuepress/dist
