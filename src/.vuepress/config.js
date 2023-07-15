@@ -2,7 +2,7 @@ module.exports = {
   locales: {
     '/': {
       lang: 'ja',
-      title: 'VuePressの紹介',
+      title: 'yaaaaa',
       description: 'ノーコード、無料で専用マニュアルが作れます',
     }
   },
