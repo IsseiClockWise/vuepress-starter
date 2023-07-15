@@ -17,6 +17,6 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: IsseiClockWise/vuepress-starter
         TARGET_BRANCH: main
-        BUILD_SCRIPT: npm && npm src:build
+        BUILD_SCRIPT: npm init && npm run build
         BUILD_DIR: src/.vuepress/dist
         # CNAME: https://www.xxx.com
