@@ -16,6 +16,7 @@
     "eject": "vuepress eject src"
   },
   "dependencies": {
-    "markdown-it-mark": "^3.0.1"
+    "markdown-it-mark": "^3.0.1",
+    "stylus": "^0.59.0"
   }
 }
