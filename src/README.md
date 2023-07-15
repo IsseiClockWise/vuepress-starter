@@ -1,16 +1,17 @@
 ---
 home: true
-heroImage: /hero.png
-heroText: Hero Title
-tagline: Hero subtitle
-actionText: Get Started →
-actionLink: /guide/
-features:
-- title: Simplicity First
-  details: Minimal setup with markdown-centered project structure helps you focus on writing.
-- title: Vue-Powered
-  details: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
-- title: Performant
-  details: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
+
+# 開発手順
+
+## 1. マニュアルを書き直したりする方法
+
+- `npm run dev`を実行しながら開発を行う
+- 編集するたびに内容が更新されていくので基本的には`npm run dev`は実行されながら使っていくこと
+- マークダウン記法を使って記述する
+- マークダウンの書き方については[VuePressの使い方](https://koro-vuepress.netlify.app/guide/markdown.html#%E7%94%BB%E5%83%8F)を参考にするか、各ファイルの書き方を参考にすること
+
+## 2. ホームページに反映させる方法
+- `npm run build`をを実行する
+- 所定のGitHubに変更を反映させる
+- 実際にページにアクセスして変更内容が反映されているかチェックする

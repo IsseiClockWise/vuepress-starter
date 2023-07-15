@@ -7,10 +7,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.9.9",
     "vuepress": "^1.9.9"
   },
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "build": "vuepress build src",
+    "eject": "vuepress eject src"
+  },
+  "dependencies": {
+    "markdown-it-mark": "^3.0.1"
   }
 }
