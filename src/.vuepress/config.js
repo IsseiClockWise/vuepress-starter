@@ -32,7 +32,6 @@ module.exports = {
           { text: 'Cホーム', link: '/typeC/' },
           { text: 'SEVEN', link: '/typeC/seven.html' },
           { text: 'EIGHT', link: '/typeC/eight.html' },
-          { text: 'CHILD', link: '/typeC/typeC-child/' },
         ]
       },
     ],
@@ -43,15 +42,7 @@ module.exports = {
       '/typeB2/': ['', 'five', 'six'],
 
       // Cパターン
-      '/typeC/':['','seven', 'eight',
-        {
-          title: 'CHILD',
-          // ナビからのリンクはCHILDでpathも一箇所にしている
-          path: '/typeC/typeC-child/',
-          children: ['typeC-child/', 'typeC-child2/',],
-          collapsable: false, //折りたたまないない場合
-        },
-      ],
+      '/typeC/':['','seven', 'eight'],
 
       '/': [
         {
