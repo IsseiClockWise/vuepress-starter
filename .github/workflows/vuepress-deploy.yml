@@ -1,32 +1,33 @@
-name: Build and Deploy
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.20.1]
+  deploy:
+    runs-on: ubuntu-20.04
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+      - uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Asia/Tokyo"
 
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
 
-    - name: Install dependencies
-      run: rm -rf node_modules && npm install  # このステップで依存関係をインストールする
+      - name: setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
 
-    - name: Build VuePress site
-      run: rm -rf node_modules/.cache && npm run build  # ビルドスクリプトを実行する
+      - name: Install dependencies
+        run: npm install
 
-    - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
-      env:
-        ACCESS_TOKEN: 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
-        TARGET_REPO: IsseiClockWise/vuepress-starter
-        TARGET_BRANCH: main
-        BUILD_DIR: src/.vuepress/dist
-        # CNAME: https://www.xxx.com
+      - name: Build VuePress site
+        run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./src/.vuepress/dist
